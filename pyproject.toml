@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seo-audit-tool"
+version = "1.0.0"
+description = "Comprehensive SEO website analysis tool with scoring, issue detection, and HTML/JSON reports."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Tiran Moskovitch", email = "tiran@tirandev.com"},
+]
+keywords = ["seo", "audit", "website-analysis", "seo-tool", "web-crawler"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "requests>=2.28",
+    "beautifulsoup4>=4.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/tiranmoskovitch-dev/seo-audit-tool"
+Repository = "https://github.com/tiranmoskovitch-dev/seo-audit-tool"
+Issues = "https://github.com/tiranmoskovitch-dev/seo-audit-tool/issues"
+
+[project.scripts]
+seo-audit = "seo_audit_tool.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["seo_audit_tool*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
