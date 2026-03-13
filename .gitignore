@@ -1,6 +1,11 @@
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
 .env
-*.html
-*.json
-output/
+.venv/
+venv/
+*.log
+.DS_Store
